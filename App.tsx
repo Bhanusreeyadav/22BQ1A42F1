@@ -1,3 +1,14 @@
-import { Routes, Route } from 'react-router-dom'; import ShortenerPage from './pages/ShortenerPage'; import StatisticsPage from './pages/StatisticsPage'; import RedirectHandler from './pages/RedirectHandler'; import NotFoundPage from './pages/NotFoundPage';
+import React from "react";
+import { AppRoutes } from "./routes/AppRoutes";
+import { CssBaseline, Container } from "@mui/material";
 
-export default function App() { return ( <Routes> <Route path="/" element={<ShortenerPage />} /> <Route path="/statistics" element={<StatisticsPage />} /> <Route path=":shortcode" element={<RedirectHandler />} /> <Route path="*" element={<NotFoundPage />} /> </Routes> ); }
+export default function App() {
+  return (
+    <>
+      <CssBaseline />
+      <Container maxWidth="md">
+        <AppRoutes />
+      </Container>
+    </>
+  );
+}
